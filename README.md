@@ -1,5 +1,7 @@
 # A0 Poster Template
 
+![Poster preview](pic/preview.png)
+
 A0 portrait poster (`a0poster` class) with a coloured header, logo strip and rounded section boxes.
 
 ## Overleaf
