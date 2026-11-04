@@ -1,0 +1,141 @@
+%% ============================================================
+%%  A0 portrait poster template
+%%  Compile with pdfLaTeX + BibTeX (Overleaf default).
+%% ============================================================
+\documentclass[portrait]{a0poster}
+
+\makeatletter
+\input{posterstyle.tex}
+\makeatother
+
+\fontsize{42}{48}\selectfont
+
+% Optional: change the accent colour
+% \definecolor{postercolor}{HTML}{347b97}
+
+%% ------------------------------------------------------------
+%%  Header content
+%% ------------------------------------------------------------
+\postertitle{Poster Title}
+\postersubtitle{A descriptive subtitle for your work}
+\posterauthors{%
+  First Author\textsuperscript{\dag},
+  Second Author\textsuperscript{\ddag},
+  Third Author\textsuperscript{\dag*}}
+\posteraffiliations{%
+  \textsuperscript{\dag}University of Cagliari,
+  \textsuperscript{\ddag}Second Institution,
+  \textsuperscript{*}Third Institution, Country.}
+
+% Logo strip below the header (leave empty to hide it)
+\posterlogos{%
+  \includegraphics[height=3.5cm]{pic/logos/unica.pdf}\hfill%
+  \includegraphics[height=3.5cm]{pic/logos/unige.png}\hfill%
+  \includegraphics[height=3.5cm]{pic/logos/sapienza.pdf}\hfill%
+  \includegraphics[height=3.5cm]{pic/logos/saiferlab.png}%
+}
+
+\begin{document}
+\makeposterheader
+
+%% ------------------------------------------------------------
+%%  Two-column part
+%% ------------------------------------------------------------
+\begin{multicols}{2}
+
+\begin{posterbox}[Introduction]
+Write a short motivation of the problem here. State the gap in the
+literature and what this work contributes. Cite related work like
+this~\cite{example2024}.
+\begin{enumerate}
+  \item \textbf{Contribution one}: one-line description.
+  \item \textbf{Contribution two}: one-line description.
+  \item \textbf{Contribution three}: one-line description.
+\end{enumerate}
+\end{posterbox}
+
+\begin{posterbox}[Method]
+Describe the problem formulation. Equations are rendered as usual:
+\begin{equation}
+  x^\star \in \argmin_{x\in\mathcal{X}} \; \mathcal{L}(x, y) \quad
+  \text{s.t.} \quad \|x - x_0\|_p \le \varepsilon .
+  \label{eq:main}
+\end{equation}
+Refer to it as \cref{eq:main}.\smallskip
+
+\textbf{Step 1.} Short description of the first step.
+\begin{equation}
+  \theta^{(k+1)} = \theta^{(k)} - \alpha \nabla_\theta \mathcal{L}(\theta^{(k)})
+  \tag{S1}
+\end{equation}
+\textbf{Step 2.} Short description of the second step.
+\end{posterbox}
+
+\begin{posterbox}[Experimental Setup]
+\textbf{Datasets:} list the datasets used.\\
+\textbf{Models:} list the models used.\\
+\textbf{Metrics:} define the evaluation metrics.
+
+\paragraph{Scenarios:} describe the evaluation scenarios or baselines.
+\end{posterbox}
+
+\begin{posterbox}[Code]
+Show how to use your library or tool:
+\begin{lstlisting}
+import torch
+
+# Short, readable usage example
+def my_function(inputs: Tensor) -> Tensor: ...
+
+results = my_function(torch.zeros(10))
+\end{lstlisting}
+\end{posterbox}
+
+\end{multicols}
+
+%% ------------------------------------------------------------
+%%  Full-width box
+%% ------------------------------------------------------------
+\begin{posterbox}[Results]
+Summarise the main experimental findings here.\\[0.3cm]
+\begin{minipage}[t]{0.4\textwidth}
+  \centering
+  \includegraphics[height=0.095\textheight]{example-image-a}\par
+  \raggedright
+  \textbf{Figure a.} Caption of the first figure.
+\end{minipage}\hfill%
+\begin{minipage}[t]{0.57\textwidth}
+  \centering
+  \includegraphics[height=0.095\textheight]{example-image-b}\par
+  \raggedright
+  \textbf{Figure b.} Caption of the second figure.
+\end{minipage}
+\end{posterbox}
+
+\begin{posterbox}[Conclusion]
+Wrap up the key takeaways: (i) first finding; (ii) second finding;
+(iii) third finding. Mention future work.
+\end{posterbox}
+
+%% ------------------------------------------------------------
+%%  Footer: bibliography + acknowledgments
+%% ------------------------------------------------------------
+\begin{multicols}{2}
+
+\begin{posterbox}[Bibliography]
+\nocite{*}
+\posterbibliography{ieeetr}{bibliography}
+\end{posterbox}
+
+\begin{posterbox}[Acknowledgment]
+This work has been partially supported by the EU---NGEU (CN00000023);
+the project Sec4AI4Sec (101120393); the project ELSA (101070617);
+projects SERICS (PE00000014) and FAIR (PE0000013).\\[1.5cm]
+\includegraphics[height=0.08\textwidth]{pic/logos/elsa.png}\hfill%
+\includegraphics[height=0.08\textwidth, clip, trim=0 4cm 20cm 4cm]{pic/logos/sec4ai4sec.png}\hfill%
+\includegraphics[height=0.08\textwidth]{pic/logos/fair.pdf}\hfill%
+\includegraphics[height=0.08\textwidth]{pic/logos/serics.png}
+\end{posterbox}
+
+\end{multicols}
+\end{document}
