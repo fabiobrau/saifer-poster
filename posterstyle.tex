@@ -155,6 +155,17 @@
 }
 
 %% ------------------------------------------------------------
+%%  Generic logo placeholder:  \logoplaceholder[height]{Label}
+%%  Replace with \includegraphics once you have the real logo.
+%% ------------------------------------------------------------
+\newcommand{\logoplaceholder}[2][0.08\textwidth]{%
+  \tcbox[colback=postercolor!8, colframe=postercolor, boxrule=1.5pt,
+         arc=0.2cm, left=0pt, right=0pt, top=0pt, bottom=0pt,
+         nobeforeafter, box align=center]{%
+    \parbox[c][#1][c]{1.9\dimexpr#1\relax}{\centering\normalsize\color{postercolor}\textbf{#2}}}%
+}
+
+%% ------------------------------------------------------------
 %%  Handy math macros
 %% ------------------------------------------------------------
 \DeclareMathOperator*{\argmin}{argmin}

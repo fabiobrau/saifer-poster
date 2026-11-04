@@ -12,7 +12,7 @@ A0 portrait poster (`a0poster` class) with a coloured header, logo strip and rou
 - `main.tex` — content: title, authors, logos, boxes.
 - `posterstyle.tex` — layout, colours, `posterbox` environment, header, code style.
 - `bibliography.bib` — references.
-- `pic/logos/` — institutional and funding logos.
+- `pic/logos/` — university and lab logos (funding logos are placeholders: `\logoplaceholder{...}`).
 
 ## Usage
 - Section box: `\begin{posterbox}[Title] ... \end{posterbox}`
