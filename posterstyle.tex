@@ -7,6 +7,8 @@
 \usepackage[most]{tcolorbox}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,calc}
 \usepackage{amsmath,amssymb}
 \usepackage{enumitem}
 \usepackage{booktabs}
@@ -166,6 +168,22 @@
          arc=0.2cm, left=0pt, right=0pt, top=0pt, bottom=0pt,
          nobeforeafter, box align=center]{%
     \parbox[c][#1][c]{1.9\dimexpr#1\relax}{\centering\normalsize\color{postercolor}\textbf{#2}}}%
+}
+
+%% ------------------------------------------------------------
+%%  European flag drawn in TikZ:  \euflag[height]
+%%  (official proportions 3:2, 12 stars on a circle of radius h/3)
+%% ------------------------------------------------------------
+\definecolor{eublue}{RGB}{0,51,153}
+\definecolor{euyellow}{RGB}{255,204,0}
+\newcommand{\euflag}[1][0.08\textwidth]{%
+  \begin{tikzpicture}[baseline=(current bounding box.center), x=#1, y=#1]
+    \fill[eublue] (0,0) rectangle (1.5,1);
+    \foreach \i in {0,...,11}
+      \node[star, star points=5, star point ratio=2.618, fill=euyellow,
+            inner sep=0pt, minimum size=0.1111*#1, rotate=0]
+        at ($(0.75,0.5)+({90-30*\i}:0.3333)$) {};
+  \end{tikzpicture}%
 }
 
 %% ------------------------------------------------------------
