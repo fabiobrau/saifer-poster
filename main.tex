@@ -97,18 +97,18 @@ results = my_function(torch.zeros(10))
 %%  Full-width box
 %% ------------------------------------------------------------
 \begin{posterbox}[Results]
-Summarise the main experimental findings here.\\[0.3cm]
-\begin{minipage}[t]{0.4\textwidth}
+Summarise the main experimental findings here.\\[0.5cm]
+\begin{minipage}[t]{0.48\linewidth}
   \centering
-  \includegraphics[height=0.095\textheight]{example-image-a}\par
-  \raggedright
-  \textbf{Figure a.} Caption of the first figure.
+  \includegraphics[width=\linewidth, height=0.12\textheight, keepaspectratio]{example-image-a}
+  \captionof{figure}{Caption of the first figure.}
+  \label{fig:first}
 \end{minipage}\hfill%
-\begin{minipage}[t]{0.57\textwidth}
+\begin{minipage}[t]{0.48\linewidth}
   \centering
-  \includegraphics[height=0.095\textheight]{example-image-b}\par
-  \raggedright
-  \textbf{Figure b.} Caption of the second figure.
+  \includegraphics[width=\linewidth, height=0.12\textheight, keepaspectratio]{example-image-b}
+  \captionof{figure}{Caption of the second figure.}
+  \label{fig:second}
 \end{minipage}
 \end{posterbox}
 
